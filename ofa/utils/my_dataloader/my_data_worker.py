@@ -3,13 +3,15 @@ r""""Contains definitions of the methods used by the _BaseDataLoaderIter workers
 These **needs** to be in global scope since Py2 doesn't support serializing
 static methods.
 """
+import multiprocessing
+import queue
 
 import torch
 import random
 import os
 from collections import namedtuple
-# from torch._six import queue
-from torch.multiprocessing import Queue as queue
+# from torch  import queue
+from torch.multiprocessing import Queue
 from torch._utils import ExceptionWrapper
 from torch.utils.data._utils import (
     signal_handling,

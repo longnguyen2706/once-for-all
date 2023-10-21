@@ -93,14 +93,14 @@ class ImagenetDataProvider(DataProvider):
                 batch_size=train_batch_size,
                 sampler=train_sampler,
                 num_workers=n_worker,
-                pin_memory=True,
+                pin_memory=False,
             )
             self.valid = torch.utils.data.DataLoader(
                 valid_dataset,
                 batch_size=test_batch_size,
                 sampler=valid_sampler,
                 num_workers=n_worker,
-                pin_memory=True,
+                pin_memory=False,
             )
         else:
             if num_replicas is not None:
@@ -112,7 +112,7 @@ class ImagenetDataProvider(DataProvider):
                     batch_size=train_batch_size,
                     sampler=train_sampler,
                     num_workers=n_worker,
-                    pin_memory=True,
+                    pin_memory=False,
                 )
             else:
                 self.train = train_loader_class(
@@ -120,7 +120,7 @@ class ImagenetDataProvider(DataProvider):
                     batch_size=train_batch_size,
                     shuffle=True,
                     num_workers=n_worker,
-                    pin_memory=True,
+                    pin_memory=False,
                 )
             self.valid = None
 
@@ -134,7 +134,7 @@ class ImagenetDataProvider(DataProvider):
                 batch_size=test_batch_size,
                 sampler=test_sampler,
                 num_workers=n_worker,
-                pin_memory=True,
+                pin_memory=False,
             )
         else:
             self.test = torch.utils.data.DataLoader(
@@ -142,7 +142,7 @@ class ImagenetDataProvider(DataProvider):
                 batch_size=test_batch_size,
                 shuffle=True,
                 num_workers=n_worker,
-                pin_memory=True,
+                pin_memory=False,
             )
 
         if self.valid is None:
@@ -300,7 +300,7 @@ class ImagenetDataProvider(DataProvider):
                 batch_size=batch_size,
                 sampler=sub_sampler,
                 num_workers=num_worker,
-                pin_memory=True,
+                pin_memory=False,
             )
             self.__dict__["sub_train_%d" % self.active_img_size] = []
             for images, labels in sub_data_loader:

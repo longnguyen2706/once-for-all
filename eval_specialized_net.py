@@ -141,7 +141,7 @@ data_loader = torch.utils.data.DataLoader(
     batch_size=args.batch_size,
     shuffle=True,
     num_workers=args.workers,
-    pin_memory=True,
+    pin_memory=False,
     drop_last=False,
 )
 

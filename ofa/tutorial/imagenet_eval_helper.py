@@ -52,7 +52,7 @@ def calib_bn(net, path, image_size, batch_size, num_images=2000):
         sampler=sub_sampler,
         batch_size=batch_size,
         num_workers=16,
-        pin_memory=True,
+        pin_memory=False,
         drop_last=False,
     )
     # print('Resetting BN running statistics (this may take 10-20 seconds)...')

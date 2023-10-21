@@ -53,7 +53,7 @@ elif args.task == "depth":
     args.path = "exp/kernel2kernel_depth/phase%d" % args.phase
     args.dynamic_batch_size = 2
     if args.phase == 1:
-        args.n_epochs = 25
+        args.n_epochs = 2 # TODO: reset back to 25
         args.base_lr = 2.5e-3
         args.warmup_epochs = 0
         args.warmup_lr = -1

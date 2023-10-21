@@ -187,6 +187,8 @@ horovodrun -np 32 -H <server1_ip>:8,<server2_ip>:8,<server3_ip>:8,<server4_ip>:8
 * Pytorch 1.4.0+
 * ImageNet Dataset 
 * Horovod
+pip install --no-cache-dir --user horovod
+
 
 ## Related work on automated and efficient deep learning:
 [ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware](https://arxiv.org/pdf/1812.00332.pdf) (ICLR’19)
