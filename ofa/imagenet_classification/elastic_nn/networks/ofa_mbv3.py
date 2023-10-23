@@ -208,6 +208,7 @@ class OFAMobileNetV3(MobileNetV3):
 
     def load_state_dict(self, state_dict, **kwargs):
         model_dict = self.state_dict()
+        print ("model_dict", model_dict.keys())
         for key in state_dict:
             if ".mobile_inverted_conv." in key:
                 new_key = key.replace(".mobile_inverted_conv.", ".conv.")

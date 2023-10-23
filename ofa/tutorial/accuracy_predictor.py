@@ -64,8 +64,9 @@ class AccuracyPredictor:
         return pred
 
     @staticmethod
-    def spec2feats(ks_list, ex_list, d_list, r):
+    def spec2feats(ks_list, ex_list, d_list, r): # TODO: rewrite this function, but keep 128D output
         # This function converts a network config to a feature vector (128-D).
+        print ("spec to feats:", ks_list, ex_list, d_list, r)
         start = 0
         end = 4
         for d in d_list:

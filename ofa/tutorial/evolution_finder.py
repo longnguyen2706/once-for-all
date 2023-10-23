@@ -10,10 +10,10 @@ class ArchManager:
     def __init__(self):
         self.num_blocks = 20
         self.num_stages = 5
-        self.kernel_sizes = [3, 5, 7]
-        self.expand_ratios = [3, 4, 6]
-        self.depths = [2, 3, 4]
-        self.resolutions = [160, 176, 192, 208, 224]
+        self.kernel_sizes = [3] # TODO: original [3, 5, 7]
+        self.expand_ratios = [3] # TODO: original [3, 4, 6]
+        self.depths = [2, 3] # TODO: original [2, 3, 4]
+        self.resolutions = [224] # TODO: original [160, 176, 192, 208, 224]
 
     def random_sample(self):
         sample = {}

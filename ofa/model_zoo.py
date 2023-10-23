@@ -73,9 +73,9 @@ def ofa_net(net_id, pretrained=True):
         net = OFAMobileNetV3(
             dropout_rate=0,
             width_mult=1.0,
-            ks_list=[3, 5, 7],
-            expand_ratio_list=[3, 4, 6],
-            depth_list=[2, 3, 4],
+            ks_list=[3], #[3, 5, 7],
+            expand_ratio_list= [3],#[3, 4, 6],
+            depth_list= [2, 3] #[2, 3, 4],
         )
     elif net_id == "ofa_mbv3_d234_e346_k357_w1.2":
         net = OFAMobileNetV3(
